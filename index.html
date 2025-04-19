@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You’re In – Vibelytics</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #0f0f1a;
+      overflow: hidden;
+      color: white;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.3);
+    }
+
+    .particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(225,0,255,0.2) 0%, transparent 70%);
+      background-size: 400% 400%;
+      animation: float 12s ease-in-out infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      text-align: center;
+      box-shadow: 0 0 60px rgba(225, 0, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ff00cc, #3333ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #dddddd;
+    }
+
+    .socials {
+      margin-top: 30px;
+    }
+
+    .socials a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #ff00cc;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #ffffff;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #777777;
+    }
+  </style>
+</head>
+<body>
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="https://cdn.coverr.co/videos/coverr-night-music-festival-1755/1080p.mp4" type="video/mp4">
+  </video>
+
+  <div class="particles"></div>
+
+  <div class="container">
+    <h1>You're In 🎉</h1>
+    <p>Thanks for joining <strong>Vibelytics</strong> — the emotional intelligence layer of live entertainment.<br>
+    We’ll keep you updated with early access, exclusive demos, and pilot invites.</p>
+
+    <div class="socials">
+      <p>Follow us:</p>
+      <a href="https://www.instagram.com/vibelyticsai" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@vibelyticsai" target="_blank">TikTok</a>
+    </div>
+
+    <div class="footer">Vibelytics © 2025 – Made with emotion + AI</div>
+  </div>
+</body>
+</html>
