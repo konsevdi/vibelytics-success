@@ -6,12 +6,3 @@
     }
   ]
 }
-{
-  "redirects": [
-    {
-      "source": "/old",
-      "destination": "https://vibelytics.ai",
-      "permanent": false
-    }
-  ]
-}
