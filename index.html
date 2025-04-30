@@ -3,65 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>You’re In – Vibelytics</title>
+  <title>You're In – Vibelytics</title>
   <style>
+    /* Load Rethink Sans */
+    @font-face {
+      font-family: 'Rethink Sans';
+      font-style: normal;
+      font-weight: 400;
+      src: url('/fonts/RethinkSans-Regular.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Rethink Sans';
+      font-style: normal;
+      font-weight: 700;
+      src: url('/fonts/RethinkSans-Bold.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Rethink Sans';
+      font-style: normal;
+      font-weight: 800;
+      src: url('/fonts/RethinkSans-ExtraBold.woff2') format('woff2');
+    }
+
+    /* Global resets & font */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
     html, body {
-      margin: 0;
-      padding: 0;
       height: 100%;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: #0f0f1a;
-      overflow: hidden;
-      color: white;
+      font-family: 'Rethink Sans', sans-serif;
+      color: #ffffff;
     }
 
-    .video-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(0.3);
+    /* Gradient background */
+    body {
+      background: linear-gradient(135deg, #240046, #3c096c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
     }
 
-    .particles {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(225,0,255,0.2) 0%, transparent 70%);
-      background-size: 400% 400%;
-      animation: float 12s ease-in-out infinite;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    @keyframes float {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      position: relative;
-      z-index: 10;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.06);
+    /* Frosted card */
+    .card {
+      background: rgba(255,255,255,0.06);
+      padding: 40px 24px;
       border-radius: 20px;
       backdrop-filter: blur(15px);
-      text-align: center;
-      box-shadow: 0 0 60px rgba(225, 0, 255, 0.2);
+      box-shadow: 0 0 60px rgba(225,0,255,0.2);
+      max-width: 600px;
+      width: 100%;
     }
 
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, #ff00cc, #3333ff);
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #e100ff, #7f00ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -70,51 +70,67 @@
       font-size: 1.1rem;
       line-height: 1.6;
       color: #dddddd;
+      margin-bottom: 32px;
     }
 
     .socials {
-      margin-top: 30px;
+      margin-top: 24px;
     }
-
     .socials a {
       display: inline-block;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #ff00cc;
-      transition: color 0.3s ease;
+      margin: 0 12px;
+      transition: transform 0.2s;
     }
-
     .socials a:hover {
-      color: #ffffff;
+      transform: translateY(-4px);
+    }
+    .socials svg {
+      width: 32px;
+      height: 32px;
+      stroke: #ffffff;
+      stroke-width: 1.5;
+      fill: none;
+      transition: stroke 0.3s, fill 0.3s;
+    }
+    .socials a:hover svg {
+      stroke: #e100ff;
+      fill: rgba(225,0,255,0.2);
     }
 
     .footer {
-      margin-top: 40px;
+      margin-top: 32px;
       font-size: 0.8rem;
-      color: #777777;
+      color: #aaaaaa;
     }
   </style>
 </head>
 <body>
-  <video class="video-bg" autoplay muted loop playsinline>
-    <source src="https://cdn.coverr.co/videos/coverr-night-music-festival-1755/1080p.mp4" type="video/mp4">
-  </video>
-
-  <div class="particles"></div>
-
-  <div class="container">
+  <div class="card">
     <h1>You're In 🎉</h1>
-    <p>Thanks for joining <strong>Vibelytics</strong> — the emotional intelligence layer of live entertainment.<br>
-    We’ll keep you updated with early access, exclusive demos, and pilot invites.</p>
-
+    <p>
+      Thanks for joining <strong>Vibelytics</strong> — the emotional intelligence layer of live entertainment.<br>
+      We’ll keep you updated with early access, exclusive demos, and pilot invites.
+    </p>
     <div class="socials">
-      <p>Follow us:</p>
-      <a href="https://www.instagram.com/vibelyticsai" target="_blank">Instagram</a>
-      <a href="https://www.tiktok.com/@vibelyticsai" target="_blank">TikTok</a>
+      <!-- X -->
+      <a href="https://x.com/vibelytics" aria-label="X" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M16.8198 20.7684L3.75317 3.96836C3.44664 3.57425 3.72749 3 4.22678 3H6.70655C6.8917 3 7.06649 3.08548 7.18016 3.23164L20.2468 20.0316C20.5534 20.4258 20.2725 21 19.7732 21H17.2935C17.1083 21 16.9335 20.9145 16.8198 20.7684Z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 3L4 21" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@vibelyticsai" aria-label="TikTok" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 12C8.34315 12 7 13.3431 7 15C7 16.6569 8.34315 18 10 18C11.6569 18 13 16.6569 13 15V6C13.3333 7 14.6 9 17 9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
-
-    <div class="footer">Vibelytics © 2025 – Made with emotion + AI</div>
+    <div class="footer">
+      Vibelytics © 2025 – Made with emotion + AI
+    </div>
   </div>
 </body>
 </html>
+
